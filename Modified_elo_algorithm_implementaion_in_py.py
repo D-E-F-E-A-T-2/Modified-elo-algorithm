@@ -68,6 +68,7 @@ def EloRating(Ra, Rb, K, Sa, Sb, name1, name2):
     #print(name2+"\t"+str(Sb)+"\t"+str(round(oRb, 2))+"\t"+str(round(Rb, 2))+"\t"+league_b)
     print(name1+"\t"+Sa+"\t"+oRa+"         "+Ra+"         "+league_a)
     print(name2+"\t"+Sb+"\t"+oRb+"         "+Rb+"         "+league_b)
+    print("Winner:\t"+name1 if Ra>Rb else "Winner:\t"+name2)
 
 
 array=[] #Data-set storage
@@ -107,12 +108,12 @@ leagues = [Master, Diamond, Gold, unranked]
 
 for x in leagues:
     if len(x)==1:
-        print("Waiting: "+str(x[0][0]))
+        print("Waiting: "+str(x[0][0])+"\tLeague: "+str(x[0][2]))
     elif len(x)==0:
         pass
     else:
         if len(x)&1:
-            print("Waiting: "+str(x[len(x)-1][0]))
+            print("Waiting: "+str(x[len(x)-1][0])+"\tLeague: "+str(x[len(x)-1][2]))
             x.pop(len(x)-1)
         for y in range(0, len(x), 2):
             score_a = int(input("Give score of Player "+str(x[y][0])+" for this Match: "))
