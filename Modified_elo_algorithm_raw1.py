@@ -3,22 +3,13 @@
 
 import math
 import random
-"""
-global winners
-global losers
-global draws
-winners = []
-losers = []
-draws = []
-"""
+
 def Probability(rating1, rating2): 
   return 1.0 * 1.0 / (1 + 1.0 * math.pow(10, 1.0 * (rating1 - rating2) / 400)) 
   
 
 def EloRating(Ra, Rb, K, Sa, Sb, name1, name2):
-    #global winners
-    #global losers
-    #global draws
+
     # To calculate the Winning Probability of Player B 
     Pb = Probability(Ra, Rb) 
   
@@ -63,37 +54,12 @@ def EloRating(Ra, Rb, K, Sa, Sb, name1, name2):
     elif Rb>3500:
       league_b = 'Master'
     Sa, Sb, Ra, Rb, oRa, oRb = list(map(str, [Sa, Sb, Ra, Rb, oRa, oRb]))
-    """
-    if int(Sa)>int(Sb):
-      winners.append([name1, Sa, oRa, Ra])
-      losers.append([name2, Sb, oRb, Rb])
-    elif int(Sb)>int(Sa):
-      winners.append([name2, Sb, oRb, Rb])
-      losers.append([name1, Sa, oRa, Ra])
-    elif int(Sa)==int(Sb):
-      draws.append([[name1, Sa, oRa, Ra], [name2, Sb, oRb, Rb]])
-
-    #print("Player A\tvs\tPlayer B\t\tWinner\tOld Rating\tNew Rating")
-    #for x in range(len(winners)):
-      #print(name1+"\tvs\t"+name2+"\t",winners[x][0])
-    """
-
+    
     print("Player\tScore\tOld Rating\tNew Rating\tNew League")
     print(name1+"\t"+Sa+"\t"+oRa+"         "+Ra+"         "+league_a)
     print(name2+"\t"+Sb+"\t"+oRb+"         "+Rb+"         "+league_b)
     print("Winner:\t"+name1 if Sa>Sb else "Winner:\t"+name2)
-"""
-    Ra = str(round(Ra, 2))
-    Rb = str(round(Rb, 2))
-    oRa = str(round(oRa, 2))
-    oRb = str(round(oRb, 2))
-    
-    
-    print("%s\t%d\t%.2f\t%.2f\t%s"%(name1, Sa, round(oRa, 2), round(Ra, 2), league_a))
-    print("%s\t%d\t%.2f\t%.2f\t%s"%(name2, Sb, round(oRb, 2), round(Rb, 2), league_b))
-    print(name1+"\t"+str(Sa)+"\t"+str(round(oRa, 2))+"\t"+str(round(Ra, 2))+"\t"+league_a)
-    print(name2+"\t"+str(Sb)+"\t"+str(round(oRb, 2))+"\t"+str(round(Rb, 2))+"\t"+league_b)
-"""
+
     
 
 
