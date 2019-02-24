@@ -68,7 +68,7 @@ def EloRating(Ra, Rb, K, Sa, Sb, name1, name2):
     #print(name2+"\t"+str(Sb)+"\t"+str(round(oRb, 2))+"\t"+str(round(Rb, 2))+"\t"+league_b)
     print(name1+"\t"+Sa+"\t"+oRa+"         "+Ra+"         "+league_a)
     print(name2+"\t"+Sb+"\t"+oRb+"         "+Rb+"         "+league_b)
-    print("Winner:\t"+name1 if Ra>Rb else "Winner:\t"+name2)
+    print("Winner:\t"+name1 if Sa>Sb else "Winner:\t"+name2)
 
 
 array=[] #Data-set storage
